@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torneo Inmortal - Sitio Oficial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;700&display=swap" rel="stylesheet">
+	<link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        body {
+            font-family: 'Chakra Petch', sans-serif;
+            background-color: #0a0a1a;
+            color: #e0e0e0;
+            background-image:
+                    radial-gradient(circle at 10% 10%, rgba(58, 1, 95, 0.3) 0%, transparent 30%),
+                    radial-gradient(circle at 80% 90%, rgba(1, 47, 95, 0.3) 0%, transparent 30%);
+            background-attachment: fixed;
+        }
+        .navbar-glass {
+            background: rgba(10, 10, 26, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+        }
+        .btn-download-nav {
+            background: linear-gradient(90deg, #f5317f 0%, #ff7c6e 100%);
+            box-shadow: 0 0 15px #f5317f, 0 0 30px #f5317f;
+            transition: all 0.3s ease-in-out;
+        }
+        .btn-download-nav:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 0 25px #f5317f, 0 0 50px #ff7c6e;
+        }
+        .card {
+            background: rgba(16, 16, 32, 0.8);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(56, 189, 248, 0.2);
+        }
+        .section-title {
+            border-bottom: 2px solid #f5317f;
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+        @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.2); opacity: 0.7; } }
+        .status-dot { width: 1rem; height: 1rem; border-radius: 50%; display: inline-block; margin-right: 0.75rem; }
+        .status-dot.online { background-color: #39FF14; box-shadow: 0 0 8px #39FF14; animation: pulse 2s infinite; }
+        .status-dot.offline { background-color: #FF3131; box-shadow: 0 0 8px #FF3131; }
+        .server-status-text.online { color: #39FF14; text-shadow: 0 0 5px #39FF14; }
+        .server-status-text.offline { color: #FF3131; text-shadow: 0 0 5px #FF3131; }
+        
+        /* ESTILOS MEJORADOS PARA LAS TABLAS DE LA WIKI */
+        .markdown-content h1, .markdown-content h2, .markdown-content h3 { font-weight: bold; margin-top: 2rem; margin-bottom: 1rem; color: #67e8f9; }
+        .markdown-content ul { list-style-type: disc; margin-left: 1.5rem; margin-bottom: 1rem; }
+        .markdown-content p { line-height: 1.6; margin-bottom: 1rem; }
+        .markdown-content strong { color: #f5317f; }
+        .markdown-content table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; background: rgba(10, 10, 26, 0.8); border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); }
+        .markdown-content th { background-color: rgba(56, 189, 248, 0.15); color: #38bdf8; font-weight: bold; padding: 12px 15px; border-bottom: 2px solid rgba(56, 189, 248, 0.3); text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.9em; }
+        .markdown-content td { padding: 12px 15px; border-bottom: 1px solid rgba(56, 189, 248, 0.1); color: #cbd5e1; }
+        .markdown-content tr:last-child td { border-bottom: none; }
+        .markdown-content tr:hover td { background-color: rgba(245, 49, 127, 0.05); }
+
+        .donation-button:hover { transform: scale(1.05); }
+        .transfer-block { background: rgba(10, 10, 26, 0.6); border-left: 4px solid #f5317f; padding: 1rem; margin-top: 1rem; }
+        .copy-btn { background-color: #38bdf8; color: white; border: none; padding: 4px 8px; font-size: 12px; border-radius: 4px; cursor: pointer; transition: background-color 0.2s; }
+        .copy-btn:hover { background-color: #0ea5e9; }
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        .modal { transition: opacity 0.3s ease-in-out; }
+        .wiki-nav-link {
+            display: block;
+            padding: 0.75rem 1.25rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.2s, color 0.2s;
+            border: 1px solid transparent;
+        }
+        .wiki-nav-link:hover {
+            background-color: rgba(56, 189, 248, 0.1);
+            color: #67e8f9;
+        }
+        .wiki-nav-link.active {
+            background-color: rgba(56, 189, 248, 0.2);
+            color: #67e8f9;
+            border-color: rgba(56, 189, 248, 0.4);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+<header id="inicio" class="navbar-glass sticky top-0 z-50">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+		<a href="#inicio" class="flex items-center space-x-3 group">
+    <img src="favicon.png" alt="Logo" class="w-10 h-10 object-contain transition-transform group-hover:rotate-12">
+    <span class="text-2xl md:text-3xl font-bold text-white tracking-widest uppercase">
+        Torneo <span class="text-sky-400">Inmortal</span>
+    </span>
+</a>
+        <div class="hidden md:flex items-center space-x-6">
+            <a href="#inicio" class="hover:text-sky-400 transition-colors">Inicio</a>
+            <a href="#noticias" class="hover:text-sky-400 transition-colors">Noticias</a>
+            <a href="#wiki" class="hover:text-sky-400 transition-colors">Wiki del Torneo</a>
+            <a href="#rankings" data-ranking="puntos" class="hover:text-sky-400 transition-colors font-bold text-pink-400">Ranking</a>
+            <a href="#media" class="hover:text-sky-400 transition-colors">Media</a>
+            <a href="#donaciones" class="hover:text-sky-400 transition-colors">Prize Pool (Donar)</a>
+        </div>
+
+        <a href="#descargas" class="btn-download-nav text-white font-bold py-3 px-6 rounded-lg uppercase tracking-wider">Jugar Ahora</a>
+        <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+        </button>
+    </nav>
+    <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4 space-y-2"></div>
+</header>
+
+<main class="container mx-auto px-6 py-12">
+    <section id="main-content">
+        <section class="mb-16 text-center">
+            <h2 class="text-4xl font-bold mb-8 section-title mx-auto text-sky-300">Formato del Torneo</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card p-6 flex flex-col items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+                    <h3 class="text-2xl font-bold mt-4 mb-2 text-sky-400">1. La Mazmorra</h3>
+                    <p class="text-gray-400">Equipos cooperativos. Supera 3 salas de enemigos implacables y derrota al Señor de las Profundidades sin perder tus 3 vidas grupales.</p></div>
+                <div class="card p-6 flex flex-col items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2h8a2 2 0 002-2v-1a2 2 0 012-2h1.945M7.884 5.036A9 9 0 0112 3c3.314 0 6.227 1.632 8.116 4.036m-13.342 0A9 9 0 0012 21c3.314 0 6.227-1.632 8.116-4.036"></path></svg>
+                    <h3 class="text-2xl font-bold mt-4 mb-2 text-sky-400">2. Captura la Reliquia</h3>
+                    <p class="text-gray-400">Batalla táctica PvP. Escoltar a tu portador o emboscar al enemigo será vital para conseguir los puntos de la victoria.</p></div>
+                <div class="card p-6 flex flex-col items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a3.004 3.004 0 015.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    <h3 class="text-2xl font-bold mt-4 mb-2 text-sky-400">?. El Coliseo Final</h3>
+                    <p class="text-gray-400">Solo puede quedar uno. Los sobrevivientes de las rondas anteriores se enfrentarán en una arena con trampas mortales.</p></div>
+            </div>
+        </section>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2">
+                <h2 class="text-4xl font-bold mb-6 section-title text-sky-300">Últimas Noticias</h2>
+                <div id="latest-news-container" class="space-y-6"></div>
+            </div>
+            <aside>
+                <div class="card p-6 mb-8"><h3 class="text-2xl font-bold mb-4 text-sky-300">Estado del Torneo</h3><div class="flex items-center"><span id="status-dot" class="status-dot"></span><span id="server-status-text" class="text-xl font-bold">Cargando...</span></div></div>
+                <div class="card p-6"><h3 class="text-2xl font-bold mb-4 text-sky-300">Cronograma</h3><div id="events-container"></div></div>
+            </aside>
+        </div>
+    </section>
+
+    <section id="noticias" class="hidden mt-16"></section>
+    <section id="wiki" class="hidden mt-16"></section>
+    <section id="rankings" class="hidden mt-16"></section>
+    <section id="media" class="hidden mt-16"></section>
+    <section id="donaciones" class="hidden mt-16"></section>
+    <section id="descargas" class="hidden mt-16"></section>
+</main>
+
+<footer class="bg-gray-900 mt-16 border-t border-sky-900">
+    <div class="container mx-auto px-6 py-8 text-center text-gray-400">
+        &copy; 2026 Torneo Inmortal MMORPG. Todos los derechos reservados.
+    </div>
+</footer>
+
+<div id="news-modal" class="modal fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4 z-50 hidden opacity-0">
+    <div id="news-modal-content" class="card p-8 max-w-3xl w-full max-h-[90vh] overflow-y-auto relative transform scale-95 transition-transform duration-300">
+        <button id="close-modal-button" class="absolute top-4 right-4 text-gray-400 hover:text-white text-4xl leading-none">&times;</button>
+        <div id="modal-body"></div>
+    </div>
+</div>
+
+<script>
+    // Datos del evento
+    const newsData = [
+        { "id": 2, "title": "¡Inscripciones Abiertas!", "date": "2026-03-01", "content": "Las puertas del Torneo Inmortal se han abierto. Reúne a tu equipo, elige tu clase sabiamente y prepárate para los 4 grandes retos que definirán al campeón definitivo.\n\nRecuerda revisar la Wiki para estudiar el equipamiento disponible." },
+        { "id": 1, "title": "Prize Pool: El pozo inicial", "date": "2026-02-25", "content": "Hemos iniciado la campaña de recolección para el Pozo del Torneo. Todo el dinero donado por la comunidad a través de la pestaña 'Prize Pool' irá destinado directamente a los ganadores del Coliseo Final. ¡Apoya a los gladiadores!" }
+    ];
+    const eventsData = [ 
+        { "title": "Fase 1: La Mazmorra", "newsId": 2 }, 
+        { "title": "Fase 2: Captura la Reliquia", "newsId": 2 } 
+    ];
+    
+    // El Ranking (Tus datos originales, sin modificar)
+    const rankingsData = {
+        "puntos": { 
+            title: "Tabla de Posiciones Oficial", 
+            headers: ["Rango", "Jugador", "Clase Principal", "Puntos", "Estado"], 
+            data: [ 
+                { "rank": 1, "name": "Kamus", "class": "Mago Negro", "points": 0, "status": "Participando" },
+                { "rank": 2, "name": "pipokuer1", "class": "ERR_DELETED", "points": 0, "status": "Participando" }, 
+                { "rank": 3, "name": "AlterKamus", "class": "Asesino", "points": 0, "status": "Participando" }, 
+                { "rank": 4, "name": "elrochiano", "class": "Mago Negro", "points": 0, "status": "Participando" }, 
+                { "rank": 5, "name": "Panda", "class": "Mago Negro", "points": 0, "status": "Participando" }, 
+                { "rank": 6, "name": "AlterKamus", "class": "Mago Negro", "points": 0, "status": "Participando" }, 
+                { "rank": 7, "name": "victorpc2001", "class": "Mago Negro", "points": 0, "status": "Participando" }, 
+                { "rank": 8, "name": "Annie", "class": "Jugador", "points": 0, "status": "Participando" }, 
+                { "rank": 9, "name": "OrinMain", "class": "Clérigo", "points": 0, "status": "Eliminado" } 
+            ] 
+        }
+    };
+
+    const wikiData = {
+        clases: {
+            title: "Clases y Hechizos",
+            content: "Todas las clases inician con **100 HP y 100 MP** fijos.\n\n### 📊 Estadísticas Base\n| Clase | Rol | Daño Base (AD) | Poder Mágico (AP) | Def. Física | Def. Mágica | Velocidad |\n|:---|:---:|:---:|:---:|:---:|:---:|:---:|\n| **Paladín** | Tanque | 8 | 8 | 18 | 18 | Lenta |\n| **Clérigo** | Soporte | 5 | 12 | 8 | 15 | Normal |\n| **Asesino** | DPS Melee | 18 | 5 | 6 | 6 | Rápida |\n| **Arquero** | DPS Rango | 15 | 5 | 8 | 8 | Rápida |\n| **Espadachín** | Balanceado | 12 | 5 | 12 | 10 | Normal |\n| **Mago Negro** | Daño Mágico | 4 | 20 | 5 | 10 | Normal |\n\n### 🔮 Hechizos por Clase\n| Clase | Habilidad 1 | Habilidad 2 | Habilidad 3 |\n|:---|:---|:---|:---|\n| **Paladín** | Golpe Justiciero (Provocar) | Égida Sagrada (Escudo) | Intervención Divina (Invulnerabilidad) |\n| **Clérigo** | Curación en Área | Buffs de Daño (AD/AP) | Purificación |\n| **Asesino** | Puñalada Trapera | Paso Sombrío (Camuflaje) | Veneno Viuda (Paralizar) |\n| **Arquero** | Flecha Perforante | Trampa de Cazador (Capturar) | Flecha Conmocionante (Silenciar) |\n| **Espadachín** | Tajo Cruzado | Furia de Batalla | Rompemuros (Daño Verdadero) |\n| **Mago Negro** | Bola de Fuego | Nova Oscura (Cegar) | Pesadilla (Dormir) |"
+        },
+        items: {
+            title: "Economía y Equipamiento",
+            content: "Gestiona tu oro sabiamente en la tienda del Lobby antes de cada reto. \n\n### 🗡️ Armas\n| Tipo de Arma | Clases Ideales | Tier 1 (150g) | Tier 2 (600g) |\n|:---|:---|:---|:---|\n| **Espadas** | Espadachín, Paladín | +12 AD / 5% Crítico | +26 AD / 10% Crítico |\n| **Dagas** | Asesino | +8 AD / 12% Crítico | +20 AD / 25% Crítico |\n| **Arcos** | Arquero | +10 AD / 8% Crítico | +24 AD / 15% Crítico |\n| **Báculos** | Mago, Clérigo | +12 AP / 2% Crítico | +28 AP / 5% Crítico |\n\n### 🛡️ Armaduras\n| Tipo de Armadura | Tier 1 (150g) | Tier 2 (600g) | Ventaja Principal |\n|:---|:---|:---|:---|\n| **Pesada (Heavy)** | +8 DEF / +2 M.DEF | +16 DEF / +6 M.DEF | Máxima defensa física |\n| **Ligera (Light)** | +4 DEF / +4 M.DEF | +10 DEF / +10 M.DEF | Balance perfecto (Asesinos/Arqueros) |\n| **Túnica (Robe)** | +2 DEF / +6 M.DEF | +6 DEF / +14 M.DEF | Resistencia mágica inquebrantable |\n\n### 🧪 Consumibles y Pergaminos\n| Ítem | Efecto | Costo |\n|:---|:---|:---:|\n| **Poción Menor (Roja/Azul)** | Recupera 30 HP/MP | 25g |\n| **Poción Mayor (Roja/Azul)** | Recupera 60 HP/MP | 60g |\n| **Scroll: Claridad Mental** | Regenera 10 MP/s por 10s | 100g |\n| **Scroll: Grito de Desafío** | Aplica efecto Provocar (Taunt) | 200g |\n| **Bomba Gélida** | Daño AOE + Efecto Paralizar | 300g |"
+        },
+        mapas: {
+            title: "Guía de Retos y Monstruos",
+            content: "Conoce a lo que te enfrentas antes de entrar a la arena.\n\n### 🏰 Reto 1: La Mazmorra (PvE)\n| Sala | Monstruo | Vida (HP) | Daño | Recompensa |\n|:---:|:---|:---:|:---|:---:|\n| **Sala 1 (Fácil)** | Esqueleto Guerrero | 40 HP | 15 Físico | 10-15g |\n| **Sala 1 (Fácil)** | Murciélago Rabioso | 20 HP | 10 Físico (Rápido) | 5-8g |\n| **Sala 2 (Medio)** | Orco Corrupto | 90 HP | 25 Físico | 35-45g |\n| **Sala 2 (Medio)** | Cultista Menor | 60 HP | 22 Mágico (Distancia) | 40-50g |\n| **Sala 3 (Alta)** | Caballero Élite | 250 HP | 35 Físico | 120-150g |\n| **Sala 3 (Alta)** | Sombra Acechante | 100 HP | 28 Daño Verdadero | 130-160g |\n| **Jefe Final** | Señor de las Profundidades | 2500 HP | 50 Físico / Magia AOE | ¡Victoria! |\n\n### 🚩 Reto 2: Captura la Reliquia (PvP)\nUn mapa táctico de CTF. El portador de la reliquia sufrirá lentitud extrema, obligando a su equipo a escoltarlo mientras el enemigo embosca.\n\n### ⚔️ Reto 3: El Coliseo Final (Muerte Súbita)\nEl evento que definirá al campeón. Los sobrevivientes se enfrentarán en una arena con trampas mortales que se activan con el tiempo."
+        }
+    };
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const mainContent = document.getElementById('main-content');
+        const sections = {
+            noticias: document.getElementById('noticias'),
+            wiki: document.getElementById('wiki'),
+            rankings: document.getElementById('rankings'),
+            media: document.getElementById('media'),
+            donaciones: document.getElementById('donaciones'),
+            descargas: document.getElementById('descargas'),
+        };
+        const allSections = Object.values(sections);
+        const navLinks = document.querySelectorAll('header a[href^="#"]');
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const newsModal = document.getElementById('news-modal');
+        const closeModalButton = document.getElementById('close-modal-button');
+
+        renderAllSectionsContent();
+
+        const showSection = (targetId) => {
+            if (targetId === 'inicio') {
+                mainContent.classList.remove('hidden');
+                allSections.forEach(s => s.classList.add('hidden'));
+            } else {
+                mainContent.classList.add('hidden');
+                allSections.forEach(s => s.id === targetId ? s.classList.remove('hidden') : s.classList.add('hidden'));
+            }
+            window.scrollTo(0, 0);
+        };
+
+        navLinks.forEach(link => link.addEventListener('click', (e) => handleNavLinkClick(e, link, showSection)));
+
+        const desktopNavContainer = document.querySelector('.hidden.md\\:flex.items-center.space-x-6');
+        mobileMenu.innerHTML = desktopNavContainer.innerHTML;
+        mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', (e) => handleNavLinkClick(e, link, showSection)));
+        mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+        // Estado Forzado a ONLINE para el torneo
+        const statusDot = document.getElementById('status-dot'), statusText = document.getElementById('server-status-text');
+        statusDot.classList.add('online'); statusText.textContent = 'En Inscripciones'; statusText.classList.add('online'); 
+
+        closeModalButton.addEventListener('click', closeNewsModal);
+        newsModal.addEventListener('click', (e) => { if(e.target === newsModal) closeNewsModal(); });
+
+        showSection('inicio');
+    });
+
+    function handleNavLinkClick(e, link, showSectionCallback) {
+        const href = link.getAttribute('href');
+        if (href.startsWith('#')) {
+            e.preventDefault();
+            const sectionId = href.substring(1);
+            if (link.dataset.ranking) {
+                renderRanking(link.dataset.ranking);
+                showSectionCallback('rankings');
+            } else { showSectionCallback(sectionId); }
+            document.getElementById('mobile-menu').classList.add('hidden');
+        }
+    }
+
+    function renderAllSectionsContent() {
+        const latestNewsContainer = document.getElementById('latest-news-container');
+        latestNewsContainer.innerHTML = newsData.slice(0, 3).map(createNewsCard).join('');
+        latestNewsContainer.querySelectorAll('.news-link').forEach(a => a.addEventListener('click', (e) => {
+            e.preventDefault();
+            showNewsModal(a.dataset.newsid);
+        }));
+
+        const eventsContainer = document.getElementById('events-container');
+        eventsContainer.innerHTML = `<ul class="space-y-3">${eventsData.map(e => `<li><a href="#" data-newsid="${e.newsId}" class="hover:text-sky-400 transition-colors block">${e.title}</a></li>`).join('')}</ul>`;
+        
+        document.getElementById('noticias').innerHTML = `<h2 class="text-4xl font-bold mb-6 section-title text-sky-300">Todas las Noticias</h2><div class="space-y-8">${newsData.map(createNewsArticle).join('')}</div>`;
+        renderWiki();
+        document.getElementById('rankings').innerHTML = `<h2 id="ranking-title" class="text-4xl font-bold mb-6 section-title text-sky-300">Rankings</h2><div class="overflow-x-auto"><table id="ranking-table" class="min-w-full text-sm text-left text-gray-300"><thead id="ranking-table-head"></thead><tbody id="ranking-table-body"></tbody></table></div>`;
+        document.getElementById('media').innerHTML = getMediaHTML();
+        document.getElementById('donaciones').innerHTML = getDonationsHTML();
+        document.getElementById('descargas').innerHTML = getDownloadsHTML();
+    }
+
+    function createNewsCard(news) {
+        return `<article class="card p-6"><h3 class="text-2xl font-bold text-sky-400 mb-2">${news.title}</h3><p class="text-sm text-gray-400 mb-4">${formatDate(news.date)}</p><p class="text-gray-300 mb-4">${news.content.split('\n')[0]}</p><a href="#" data-newsid="${news.id}" class="font-bold text-pink-500 hover:text-pink-400 transition-colors news-link">Leer más &rarr;</a></article>`;
+    }
+    function createNewsArticle(news) {
+        return `<article id="news-article-${news.id}" class="card p-8"><h3 class="text-3xl font-bold text-sky-400 mb-2">${news.title}</h3><p class="text-sm text-gray-400 mb-6">${formatDate(news.date)}</p><div class="markdown-content text-gray-300">${marked.parse(news.content)}</div></article>`;
+    }
+    function getDownloadsHTML() {
+        return `
+        <h2 class="text-4xl font-bold mb-8 section-title text-sky-300">Descargar Cliente del Torneo</h2>
+        <div class="card p-8 text-center max-w-3xl mx-auto">
+            <a href="https://drive.google.com/file/d/1v4FzfnScdNQsJTLH0EZaBqmFDiO4LE3Z/view?usp=sharing" class="inline-block btn-download-nav text-white font-bold py-4 px-10 rounded-lg uppercase tracking-wider text-xl mb-4">Descargar (v1.0)</a>
+            <p class="text-gray-400 mb-8">Descomprime el archivo y ejecuta el cliente para ingresar al Lobby.</p>
+            
+            <div class="card p-6 bg-black/40 text-left border-sky-500/30">
+                <h3 class="text-xl font-bold mb-4 text-center text-gray-200 border-b border-gray-800 pb-2 uppercase tracking-widest">Requisitos Mínimos</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                    <div class="p-2 bg-white/5 rounded"><span class="text-pink-500 font-bold">CPU:</span> 2 Cores 2.5Ghz</div>
+                    <div class="p-2 bg-white/5 rounded"><span class="text-pink-500 font-bold">RAM:</span> 4 GB</div>
+                    <div class="p-2 bg-white/5 rounded"><span class="text-pink-500 font-bold">STORAGE:</span> 500 MB</div>
+                    <div class="p-2 bg-white/5 rounded"><span class="text-pink-500 font-bold">GPU:</span> 100 MB</div>
+                    <div class="p-2 bg-white/5 rounded sm:col-span-2 text-center"><span class="text-pink-500 font-bold">INTERNET:</span> 1 Mbps</div>
+                </div>
+            </div>
+        </div>`;
+    }
+    
+    function getDonationsHTML() {
+        // ==========================================
+        // VARIABLES ACTUALIZADAS A TUS INDICACIONES:
+        const metaTorneo = 200; // La meta en dólares
+        const recaudado = 100;   // Lo recaudado actualmente
+        const porcentaje = Math.min((recaudado / metaTorneo) * 100, 100); 
+        // ==========================================
+
+        return `
+        <h2 class="text-4xl font-bold mb-2 section-title text-sky-300 mx-auto">Financiar el Pozo (Prize Pool)</h2>
+        <p class="max-w-3xl mx-auto text-center my-4">Todo lo recaudado irá destinado 100% al premio del equipo o jugador ganador del Torneo. ¡Haz crecer el botín!</p>
+        
+        <div class="max-w-3xl mx-auto my-8 p-6 card rounded-lg shadow-[0_0_20px_rgba(245,49,127,0.2)]">
+            <h3 class="text-2xl font-bold text-sky-400 mb-3 text-center">Pozo Actual</h3>
+            <div class="flex justify-between mb-2">
+              <span class="text-lg font-bold text-pink-500">Recaudado: $${recaudado} USD</span>
+              <span class="text-md font-medium text-white">Meta Inicial: $${metaTorneo} USD</span>
+            </div>
+            <div class="w-full bg-gray-800 rounded-full h-6 border border-gray-600 relative overflow-hidden">
+              <div class="bg-gradient-to-r from-pink-500 to-sky-500 h-6 rounded-full transition-all duration-1000" style="width: ${porcentaje}%"></div>
+            </div>
+            <p class="text-gray-400 text-sm mt-4 text-center">Actualizado manualmente por la administración.</p>
+        </div>
+
+        <div class="flex justify-center my-8 max-w-4xl mx-auto">
+            <a href="https://paypal.me/HelpForAll" target="_blank" rel="noopener noreferrer" class="donation-button bg-white p-4 rounded-lg flex justify-center items-center h-24 w-64">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/2560px-PayPal.svg.png" alt="Donar con PayPal" class="max-h-full max-w-full object-contain">
+            </a>
+        </div>
+        
+        <h3 class="text-2xl font-bold mt-12 mb-4 text-center text-sky-300">Transferencias Directas</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <div class="card p-4"><h4 class="font-bold text-lg mb-2">🇦🇷 ARGENTINA (Global66)</h4><div class="transfer-block flex justify-between items-center"><span><strong>Alias:</strong> <code class="bg-gray-900 p-1 rounded">kamusvalenzuela.g66</code></span><button onclick="copyToClipboard('kamusvalenzuela.g66', this)" class="copy-btn">Copiar</button></div></div>
+            <div class="card p-4"><h4 class="font-bold text-lg mb-2">🇺🇸 U.S.A (Global66)</h4><div class="transfer-block flex justify-between items-center"><span><strong>Account:</strong> <code class="bg-gray-900 p-1 rounded">8337690604</code></span><button onclick="copyToClipboard('8337690604', this)" class="copy-btn">Copiar</button></div></div>
+        </div>`;
+    }
+
+    function getMediaHTML() {
+        return `<h2 class="text-4xl font-bold mb-8 section-title text-sky-300">Media del Torneo</h2><p class="text-gray-400 mb-8">Aquí se publicarán los clips destacados del evento.</p>`;
+    }
+
+    function renderWiki() {
+        const wikiSection = document.getElementById('wiki');
+        wikiSection.innerHTML = `
+            <h2 class="text-4xl font-bold mb-8 section-title text-sky-300">Enciclopedia del Torneo</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <nav id="wiki-nav" class="md:col-span-1 card p-4 self-start">
+                    ${Object.keys(wikiData).map(key => `<a href="#" class="wiki-nav-link" data-category="${key}">${wikiData[key].title}</a>`).join('')}
+                </nav>
+                <div id="wiki-content" class="md:col-span-3 card p-8 markdown-content"></div>
+            </div>`;
+
+        const wikiNavLinks = wikiSection.querySelectorAll('.wiki-nav-link');
+
+        function renderWikiContent(category) {
+            const contentArea = document.getElementById('wiki-content');
+            contentArea.innerHTML = marked.parse(wikiData[category].content);
+            wikiNavLinks.forEach(link => { link.classList.toggle('active', link.dataset.category === category); });
+        }
+
+        wikiNavLinks.forEach(link => { link.addEventListener('click', e => { e.preventDefault(); renderWikiContent(link.dataset.category); }); });
+        renderWikiContent('clases'); 
+    }
+
+    function showNewsModal(newsId) {
+        const news = newsData.find(n => n.id == newsId);
+        if (!news) return;
+        const modalBody = document.getElementById('modal-body');
+        modalBody.innerHTML = `<h3 class="text-3xl font-bold text-sky-400 mb-2">${news.title}</h3><p class="text-sm text-gray-400 mb-6">${formatDate(news.date)}</p><div class="markdown-content text-gray-300">${marked.parse(news.content)}</div>`;
+        const modal = document.getElementById('news-modal');
+        modal.classList.remove('hidden');
+        setTimeout(() => { modal.classList.remove('opacity-0'); modal.querySelector('#news-modal-content').classList.remove('scale-95'); }, 10);
+    }
+
+    function closeNewsModal() {
+        const modal = document.getElementById('news-modal');
+        modal.classList.add('opacity-0'); modal.querySelector('#news-modal-content').classList.add('scale-95');
+        setTimeout(() => modal.classList.add('hidden'), 300);
+    }
+
+    function copyToClipboard(text, element) {
+        navigator.clipboard.writeText(text).then(() => {
+            const originalText = element.textContent;
+            element.textContent = '¡Copiado!';
+            setTimeout(() => { element.textContent = originalText; }, 1500);
+        });
+    }
+
+    function formatDate(dateString) { return new Date(dateString).toLocaleString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' }); }
+
+    function renderRanking(category) {
+        const ranking = rankingsData[category];
+        if (!ranking) return;
+        document.getElementById('ranking-title').textContent = ranking.title;
+        const tableHead = document.getElementById('ranking-table-head'), tableBody = document.getElementById('ranking-table-body');
+        
+        tableHead.innerHTML = `<tr>${ranking.headers.map(h => `<th scope="col" class="py-3 px-6">${h}</th>`).join('')}</tr>`;
+        
+        // MODIFICACIÓN: Aquí se agregan los colores Dorado, Plateado y Bronce a los primeros 3, dejando los datos intactos
+        tableBody.innerHTML = ranking.data.map(item => {
+            let rowClass = "border-b border-sky-900 hover:bg-gray-800";
+            let rankDecorated = item.rank;
+            
+            if (item.rank === 1) {
+                rowClass = "border-b border-sky-900/30 bg-[#FFD700]/10 hover:bg-[#FFD700]/20 transition-colors font-bold text-[#FFD700]";
+                rankDecorated = `${item.rank} `;
+            } else if (item.rank === 2) {
+                rowClass = "border-b border-sky-900/30 bg-[#C0C0C0]/10 hover:bg-[#C0C0C0]/20 transition-colors font-bold text-[#C0C0C0]";
+                rankDecorated = `${item.rank} `;
+            } else if (item.rank === 3) {
+                rowClass = "border-b border-sky-900/30 bg-[#CD7F32]/10 hover:bg-[#CD7F32]/20 transition-colors font-bold text-[#CD7F32]";
+                rankDecorated = `${item.rank} `;
+            }
+
+            return `<tr class="${rowClass}">
+                <td class="py-4 px-6">${rankDecorated}</td>
+                <td class="py-4 px-6">${item.name}</td>
+                <td class="py-4 px-6">${item.class}</td>
+                <td class="py-4 px-6">${item.points}</td>
+                <td class="py-4 px-6">${item.status}</td>
+            </tr>`;
+        }).join('');
+    }
+</script>
+<a href="https://discord.gg/SHEANHWCM9" target="_blank" class="fixed bottom-6 right-6 z-[60] flex items-center bg-[#5865F2] hover:bg-[#4752C4] text-white px-5 py-3 rounded-full shadow-2xl transition-all hover:scale-110 active:scale-95 group">
+    <svg class="w-6 h-6 mr-2 fill-current" viewBox="0 0 24 24">
+        <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037 19.736 19.736 0 0 0-4.885 1.515.069.069 0 0 0-.032.027C.533 9.048-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.419-2.157 2.419zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.946-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.419-2.157 2.419z"/>
+    </svg>
+    <span class="font-bold">Inscribirse en Discord</span>
+</a>
+</body>
+</html>
