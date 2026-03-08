@@ -1,43 +1,43 @@
 [
   {
     "Puesto": 1,
-    "Nombre": "Kamus",
-    "Puntos": 0,
+    "Nombre": "victorpc2001",
+    "Puntos": 100,
     "Estado": "Participando"
   },
   {
     "Puesto": 2,
+    "Nombre": "Kamus",
+    "Puntos": 100,
+    "Estado": "Participando"
+  },
+  {
+    "Puesto": 3,
     "Nombre": "pipokuer1",
     "Puntos": 0,
     "Estado": "Participando"
   },
   {
-    "Puesto": 3,
+    "Puesto": 4,
     "Nombre": "AlterKamus",
     "Puntos": 0,
     "Estado": "Participando"
   },
   {
-    "Puesto": 4,
+    "Puesto": 5,
     "Nombre": "elrochiano",
     "Puntos": 0,
     "Estado": "Participando"
   },
   {
-    "Puesto": 5,
+    "Puesto": 6,
     "Nombre": "Panda",
     "Puntos": 0,
     "Estado": "Participando"
   },
   {
-    "Puesto": 6,
-    "Nombre": "AlterKamus2",
-    "Puntos": 0,
-    "Estado": "Participando"
-  },
-  {
     "Puesto": 7,
-    "Nombre": "victorpc2001",
+    "Nombre": "AlterKamus2",
     "Puntos": 0,
     "Estado": "Participando"
   },
@@ -55,6 +55,12 @@
   },
   {
     "Puesto": 10,
+    "Nombre": "Shaka",
+    "Puntos": 0,
+    "Estado": "Participando"
+  },
+  {
+    "Puesto": 11,
     "Nombre": "OrinMain",
     "Puntos": 0,
     "Estado": "Eliminado"
