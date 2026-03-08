@@ -1,1 +1,18 @@
-
+[
+  {
+    "id": 2,
+    "titulo": "¡Inscripciones Abiertas!",
+    "autor": "Admin",
+    "imagen": "",
+    "fecha": "2026-03-01",
+    "cuerpo": "Las puertas del Torneo Inmortal se han abierto. Reúne a tu equipo, elige tu clase sabiamente y prepárate para los 4 grandes retos que definirán al campeón definitivo.\n\nRecuerda revisar la Wiki para estudiar el equipamiento disponible."
+  },
+  {
+    "id": 1,
+    "titulo": "Prize Pool: El pozo inicial",
+    "autor": "Admin",
+    "imagen": "",
+    "fecha": "2026-02-25",
+    "cuerpo": "Hemos iniciado la campaña de recolección para el Pozo del Torneo. Todo el dinero donado por la comunidad a través de la pestaña 'Prize Pool' irá destinado directamente a los ganadores del Coliseo Final. ¡Apoya a los gladiadores!"
+  }
+]
