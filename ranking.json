@@ -61,6 +61,12 @@
   },
   {
     "Puesto": 11,
+    "Nombre": "Ikonik",
+    "Puntos": 0,
+    "Estado": "Participando"
+  },
+  {
+    "Puesto": 12,
     "Nombre": "OrinMain",
     "Puntos": 0,
     "Estado": "Eliminado"
