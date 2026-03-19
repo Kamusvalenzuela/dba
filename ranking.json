@@ -2,13 +2,13 @@
   {
     "Puesto": 1,
     "Nombre": "victorpc2001",
-    "Puntos": 100,
+    "Puntos": 0,
     "Estado": "Participando"
   },
   {
     "Puesto": 2,
     "Nombre": "Kamus",
-    "Puntos": 100,
+    "Puntos": 0,
     "Estado": "Participando"
   },
   {
@@ -67,6 +67,36 @@
   },
   {
     "Puesto": 12,
+    "Nombre": "Moisesalexd",
+    "Puntos": 0,
+    "Estado": "Participando"
+  },
+  {
+    "Puesto": 13,
+    "Nombre": "itsMsCute",
+    "Puntos": 0,
+    "Estado": "Participando"
+  },
+  {
+    "Puesto": 14,
+    "Nombre": "Sapitoxxiii",
+    "Puntos": 0,
+    "Estado": "Participando"
+  },
+  {
+    "Puesto": 15,
+    "Nombre": "Korak",
+    "Puntos": 0,
+    "Estado": "Participando"
+  },
+  {
+    "Puesto": 16,
+    "Nombre": "LaDannyACS",
+    "Puntos": 0,
+    "Estado": "Participando"
+  },
+  {
+    "Puesto": 17,
     "Nombre": "OrinMain",
     "Puntos": 0,
     "Estado": "Eliminado"
