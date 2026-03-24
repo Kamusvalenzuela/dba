@@ -8,6 +8,14 @@
     "AporteInternet": 0
   },
   {
+    "Mes": "Enero 2026",
+    "Nombre": "Kamus",
+    "AporteLuz": 100000,
+    "AporteGas": 0,
+    "AporteComida": 150000,
+    "AporteInternet": 155000
+  },
+  {
     "Mes": "Febrero 2026",
     "Nombre": "Mamá",
     "AporteLuz": 60000,
