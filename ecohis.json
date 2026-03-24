@@ -1,17 +1,18 @@
 [
-
   {
-
+    "Mes": "Enero 2026",
     "Nombre": "Mamá",
-
     "AporteLuz": 55000,
-
     "AporteGas": 14000,
-
-"AporteComida": 300000,
-
-"AporteInternet": 0
-
+    "AporteComida": 300000,
+    "AporteInternet": 0
+  },
+  {
+    "Mes": "Febrero 2026",
+    "Nombre": "Mamá",
+    "AporteLuz": 60000,
+    "AporteGas": 15000,
+    "AporteComida": 320000,
+    "AporteInternet": 0
   }
-
 ]
