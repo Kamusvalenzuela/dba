@@ -1,16 +1,23 @@
 [
   {
     "Mes": "Enero 2026",
-    "Internet": 155000,
-    "Gas": 14000,
-    "Luz": 255000,
-    "Comida": 600000
+    "Internet": 86102.72,
+    "Gas": 13000,
+    "Luz": 252650,
+    "Comida": 420000
   },
   {
     "Mes": "Febrero 2026",
-    "Internet": 168000,
-    "Gas": 15500,
-    "Luz": 280000,
-    "Comida": 650000
+    "Internet": 60392.92,
+    "Gas": 17000,
+    "Luz": 351143,
+    "Comida": 450000
+  },
+  {
+    "Mes": "Marzo 2026",
+    "Internet": 94387.44,
+    "Gas": 17000,
+    "Luz": 256689,
+    "Comida": 600000
   }
 ]
