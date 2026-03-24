@@ -1,5 +1,33 @@
 [
   {
+    "Mes": "Septiembre 2025",
+    "Internet": 70704,
+    "Gas": 26000,
+    "Luz": 288500,
+    "Comida": 376500
+  },
+  {
+    "Mes": "Octubre 2025",
+    "Internet": 37000,
+    "Gas": 28000,
+    "Luz": 234000,
+    "Comida": 405000
+  },
+  {
+    "Mes": "Noviembre 2025",
+    "Internet": 83123,
+    "Gas": 12500,
+    "Luz": 237000,
+    "Comida": 385000
+  },
+  {
+    "Mes": "Diciembre 2025",
+    "Internet": 42000,
+    "Gas": 0,
+    "Luz": 292567,
+    "Comida": 390000
+  },
+  {
     "Mes": "Enero 2026",
     "Internet": 86102.72,
     "Gas": 13000,
