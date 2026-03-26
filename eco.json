@@ -1,7 +1,7 @@
 [
   {
     "Nombre": "Mamá",
-    "AporteLuz": 71000,
+    "AporteLuz": 91000,
     "AporteGas": 0,
     "AporteComida": 300000,
     "AporteInternet": 0
@@ -22,7 +22,7 @@
   },
   {
     "Nombre": "Franco",
-    "AporteLuz": 145575,
+    "AporteLuz": 175575,
     "AporteGas": 0,
     "AporteComida": 20000,
     "AporteInternet": 30196.46
