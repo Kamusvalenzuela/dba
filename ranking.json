@@ -96,9 +96,21 @@
     "Estado": "Participando"
   },
   {
-    "Puesto": 17,
+    "Puesto": 19,
     "Nombre": "OrinMain",
     "Puntos": 0,
     "Estado": "Eliminado"
+  },
+  {
+    "Puesto": 17,
+    "Nombre": "LeilaBelen",
+    "Puntos": 0,
+    "Estado": "Participando"
+  },
+  {
+    "Puesto": 18,
+    "Nombre": "TheKlag",
+    "Puntos": 0,
+    "Estado": "Participando"
   }
 ]
