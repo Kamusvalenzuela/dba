@@ -7,110 +7,86 @@
   },
   {
     "Puesto": 2,
-    "Nombre": "Kamus",
-    "Puntos": 0,
-    "Estado": "Participando"
-  },
-  {
-    "Puesto": 3,
-    "Nombre": "pipokuer1",
-    "Puntos": 0,
-    "Estado": "Participando"
-  },
-  {
-    "Puesto": 4,
-    "Nombre": "AlterKamus",
-    "Puntos": 0,
-    "Estado": "Participando"
-  },
-  {
-    "Puesto": 5,
     "Nombre": "elrochiano",
     "Puntos": 0,
     "Estado": "Participando"
   },
   {
-    "Puesto": 6,
+    "Puesto": 3,
     "Nombre": "Panda",
     "Puntos": 0,
     "Estado": "Participando"
   },
   {
-    "Puesto": 7,
-    "Nombre": "AlterKamus2",
-    "Puntos": 0,
-    "Estado": "Participando"
-  },
-  {
-    "Puesto": 8,
+    "Puesto": 4,
     "Nombre": "Annie",
     "Puntos": 0,
     "Estado": "Participando"
   },
   {
-    "Puesto": 9,
+    "Puesto": 5,
     "Nombre": "carpotm",
     "Puntos": 0,
     "Estado": "Participando"
   },
   {
-    "Puesto": 10,
+    "Puesto": 6,
     "Nombre": "Shaka",
     "Puntos": 0,
     "Estado": "Participando"
   },
   {
-    "Puesto": 11,
+    "Puesto": 7,
     "Nombre": "Ikonik",
     "Puntos": 0,
     "Estado": "Participando"
   },
   {
-    "Puesto": 12,
+    "Puesto": 8,
     "Nombre": "Moisesalexd",
     "Puntos": 0,
     "Estado": "Participando"
   },
   {
-    "Puesto": 13,
+    "Puesto": 9,
     "Nombre": "itsMsCute",
     "Puntos": 0,
     "Estado": "Participando"
   },
   {
-    "Puesto": 14,
+    "Puesto": 10,
     "Nombre": "Sapitoxxiii",
     "Puntos": 0,
     "Estado": "Participando"
   },
   {
-    "Puesto": 15,
+    "Puesto": 11,
     "Nombre": "Korak",
     "Puntos": 0,
     "Estado": "Participando"
   },
   {
-    "Puesto": 16,
+    "Puesto": 12,
     "Nombre": "LaDannyACS",
     "Puntos": 0,
     "Estado": "Participando"
   },
   {
-    "Puesto": 19,
-    "Nombre": "OrinMain",
-    "Puntos": 0,
-    "Estado": "Eliminado"
-  },
-  {
-    "Puesto": 17,
+    "Puesto": 13,
     "Nombre": "LeilaBelen",
     "Puntos": 0,
     "Estado": "Participando"
   },
   {
-    "Puesto": 18,
+    "Puesto": 14,
     "Nombre": "TheKlag",
     "Puntos": 0,
     "Estado": "Participando"
+  },
+  {
+    "Puesto": 15,
+    "Nombre": "OrinMain",
+    "Puntos": 0,
+    "Estado": "Eliminado"
   }
 ]
