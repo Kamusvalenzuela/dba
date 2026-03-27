@@ -4,8 +4,8 @@
     "titulo": "Actualización Importante",
     "autor": "Admin",
     "imagen": "https://raw.githubusercontent.com/Kamusvalenzuela/images/9441ec3c56ac7d2f377d96ecb3e0b53207a51257/Images/noticia2.png",
-    "fecha": "2026-03-27",
-    "cuerpo": "# Updates\n## Update del ranking\nVisto y considerando que **PERSONAL DEL STAFF** figura en el ranking *(por motivos de testing)* y esto le hizo ruido a varias personas, añadímos un filtro que **ELIMINA** a los miembros del staff, para que la gente pueda tener una visualización transparente del mismo de los participantes **REALES.**\n\n## Qué sigue?\nCon esto se podrá hacer un correcto seguimiento de las **vacantes disponibles** para el torneo, también se verá mediante actividad en el servidor quienes son activos y quienes no ***(para no dejar sin vacante a quien esté realmente interesado en participar).***"
+    "fecha": "2026-03-28",
+    "cuerpo": "## Update del ranking\nVisto y considerando que **PERSONAL DEL STAFF** figura en el ranking *(por motivos de testing)* y esto le hizo ruido a varias personas, añadímos un filtro que **ELIMINA** a los miembros del staff, para que la gente pueda tener una visualización transparente del mismo de los participantes **REALES.**\n\n## Qué sigue?\nCon esto se podrá hacer un correcto seguimiento de las **vacantes disponibles** para el torneo, también se verá mediante actividad en el servidor quienes son activos y quienes no ***(para no dejar sin vacante a quien esté realmente interesado en participar).***"
   },
   {
     "id": 3,
@@ -13,7 +13,7 @@
     "autor": "Admin",
     "imagen": "",
     "fecha": "2025-03-08",
-    "cuerpo": "Tras una charla interna con sponsors, nos vemos obligados a mantener un límite de cupos disponibles para participar en este torneo, el cupo límite será de solo **50 participantes**.\nEl cupo puede incrementarse junto con el pozo (Esto es para prevenir saturar el servidor)\nPero si no crece más el pozo, el límite de participaciones será de 50."
+    "cuerpo": "Tras una charla interna con sponsors, nos vemos obligados a mantener un límite de cupos disponibles para participar en este torneo, el cupo límite será de solo **50 participantes**. \n\nEl cupo puede incrementarse junto con el pozo (Esto es para prevenir saturar el servidor)\n Pero si no crece más el pozo, el límite de participaciones será de 50."
   },
   {
     "id": 2,
