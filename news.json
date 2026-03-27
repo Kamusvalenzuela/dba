@@ -13,7 +13,7 @@
     "autor": "Admin",
     "imagen": "",
     "fecha": "2025-03-08",
-    "cuerpo": "Tras una charla interna con sponsors, nos vemos obligados a mantener un límite de cupos disponibles para participar en este torneo, el cupo límite será de solo **50 participantes**. \n\nEl cupo puede incrementarse junto con el pozo (Esto es para prevenir saturar el servidor)\n Pero si no crece más el pozo, el límite de participaciones será de 50."
+    "cuerpo": "Tras una charla interna con sponsors, nos vemos obligados a mantener un límite de cupos disponibles para participar en este torneo, el cupo límite será de solo **50 participantes**. \n\nEl cupo puede incrementarse junto con el pozo (Esto es para prevenir saturar el servidor).\n\n Pero si no crece más el pozo, el límite de participaciones será de **50**."
   },
   {
     "id": 2,
@@ -21,7 +21,7 @@
     "autor": "Admin",
     "imagen": "",
     "fecha": "2026-03-01",
-    "cuerpo": "Las puertas del Torneo Inmortal se han abierto. Reúne a tu equipo, elige tu clase sabiamente y prepárate para los 4 grandes retos que definirán al campeón definitivo.\n\nRecuerda revisar la Wiki para estudiar el equipamiento disponible."
+    "cuerpo": "Las puertas del Torneo Inmortal se abrieron. Junta a tu equipo o anda solo, elegí tu clase y prepárate para los grandes retos que van a definir al campeón definitivo.\n\nPero acordate algo, en la wiki vas a encontrar información importnate para estudiar el equipamiento disponible."
   },
   {
     "id": 1,
@@ -29,6 +29,6 @@
     "autor": "Admin",
     "imagen": "",
     "fecha": "2026-02-25",
-    "cuerpo": "Hemos iniciado la campaña de recolección para el Pozo del Torneo. Todo el dinero donado por la comunidad a través de la pestaña 'Prize Pool' irá destinado directamente a los ganadores del Coliseo Final. ¡Apoya a los gladiadores!"
+    "cuerpo": "Hemos iniciado la campaña de recolección para el Pozo del Torneo. Todo el dinero donado por la comunidad a través de la pestaña **Prize Pool** irá destinado directamente a los ganadores. ¡Apoya a los participantes!"
   }
 ]
