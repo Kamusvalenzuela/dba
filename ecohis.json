@@ -9,7 +9,7 @@
   },
   {
     "Mes": "Enero 2026",
-    "Nombre": "Kamus",
+    "Nombre": "Franco",
     "AporteLuz": 100000,
     "AporteGas": 0,
     "AporteComida": 150000,
@@ -22,5 +22,37 @@
     "AporteGas": 15000,
     "AporteComida": 320000,
     "AporteInternet": 0
+  },
+  {
+    "Mes": "Marzo 2026",
+    "Nombre": "Mamá",
+    "AporteLuz": 91000,
+    "AporteGas": 15000,
+    "AporteComida": 300000,
+    "AporteInternet": 0
+  },
+  {
+    "Mes": "Marzo 2026",
+    "Nombre": "Franco",
+    "AporteLuz": 213646,
+    "AporteGas": 0,
+    "AporteComida": 20000,
+    "AporteInternet": 47193.72
+  },
+  {
+    "Mes": "Marzo 2026",
+    "Nombre": "Papá",
+    "AporteLuz": 0,
+    "AporteGas": 0,
+    "AporteComida": 325000,
+    "AporteInternet": 0
+  },
+  {
+    "Mes": "Marzo 2026",
+    "Nombre": "Leo",
+    "AporteLuz": 34476,
+    "AporteGas": 1700,
+    "AporteComida": 0,
+    "AporteInternet": 47193.72
   }
 ]
