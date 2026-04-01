@@ -45,7 +45,14 @@
     "Mes": "Marzo 2026",
     "Internet": 94387.44,
     "Gas": 17000,
-    "Luz": 306689,
+    "Luz": 344760,
     "Comida": 600000
+  },
+  {
+    "Mes": "Abril 2026",
+    "Internet": 0,
+    "Gas": 0,
+    "Luz": 40000,
+    "Comida": 0
   }
 ]
