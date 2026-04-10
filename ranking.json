@@ -85,6 +85,12 @@
   },
   {
     "Puesto": 15,
+    "Nombre": "Sunshine",
+    "Puntos": 0,
+    "Estado": "Participando"
+  },
+  {
+    "Puesto": 16,
     "Nombre": "OrinMain",
     "Puntos": 0,
     "Estado": "Eliminado"

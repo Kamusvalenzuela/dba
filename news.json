@@ -1,11 +1,19 @@
 [
   {
+    "id": 5,
+    "titulo": "Sin Sponsors",
+    "autor": "Admin",
+    "imagen": "https://raw.githubusercontent.com/Kamusvalenzuela/images/refs/heads/main/Images/noticia3.png",
+    "fecha": "2026-04-09",
+    "cuerpo": "# Sobre la primera edición\n## Sponsors\nLas grandes marcas **NO** nos auspiciaran debido a que no contamos con una cantidad de audiencia acorde a lo que buscan *(piden **+100 viewers** y **+10.000 seguidores** como **MÍNIMO**)*. Por este motivo, esta primera edición del **Torneo Inmortal**, será auspiciada enteramente del bolsillo de **Kamus** y quizás algún asociado.\n## Qué significa esto?\nEn terminos simples de entender significa que:\n- El pozo **NO** subirá tanto como se esperaba\n- El cupo de participantes será **limitado** a solo **50 personas**\n- Solo asociados podrán ayudar a este proyecto\nSe espera que en la próxima edición, logremos el cometido de poder tener mejores números que ofrecerles, ya que como se aclaró en varias ocasiones, el equipo de desarrollo y el staff completo de este torneo **NO SE QUEDA CON NADA**. Este torneo es con el fin de mejorar nuestra audiencia."
+  },
+  {
     "id": 4,
     "titulo": "Actualización Importante",
     "autor": "Admin",
     "imagen": "https://raw.githubusercontent.com/Kamusvalenzuela/images/9441ec3c56ac7d2f377d96ecb3e0b53207a51257/Images/noticia2.png",
-    "fecha": "2026-03-28",
-    "cuerpo": "## Update del ranking\nVisto y considerando que **PERSONAL DEL STAFF** figura en el ranking *(por motivos de testing)* y esto le hizo ruido a varias personas, añadímos un filtro que **ELIMINA** a los miembros del staff, para que la gente pueda tener una visualización transparente del mismo de los participantes **REALES.**\n\n## Qué sigue?\nCon esto se podrá hacer un correcto seguimiento de las **vacantes disponibles** para el torneo, también se verá mediante actividad en el servidor quienes son activos y quienes no ***(para no dejar sin vacante a quien esté realmente interesado en participar).***"
+    "fecha": "2026-03-27",
+    "cuerpo": "# Updates\n## Update del ranking\nVisto y considerando que **PERSONAL DEL STAFF** figura en el ranking *(por motivos de testing)* y esto le hizo ruido a varias personas, añadímos un filtro que **ELIMINA** a los miembros del staff, para que la gente pueda tener una visualización transparente del mismo de los participantes **REALES.**\n\n## Qué sigue?\nCon esto se podrá hacer un correcto seguimiento de las **vacantes disponibles** para el torneo, también se verá mediante actividad en el servidor quienes son activos y quienes no ***(para no dejar sin vacante a quien esté realmente interesado en participar).***"
   },
   {
     "id": 3,
@@ -13,7 +21,7 @@
     "autor": "Admin",
     "imagen": "",
     "fecha": "2025-03-08",
-    "cuerpo": "Tras una charla interna con sponsors, nos vemos obligados a mantener un límite de cupos disponibles para participar en este torneo, el cupo límite será de solo **50 participantes**. \n\nEl cupo puede incrementarse junto con el pozo (Esto es para prevenir saturar el servidor).\n\n Pero si no crece más el pozo, el límite de participaciones será de **50**."
+    "cuerpo": "Tras una charla interna con sponsors, nos vemos obligados a mantener un límite de cupos disponibles para participar en este torneo, el cupo límite será de solo **50 participantes**.\nEl cupo puede incrementarse junto con el pozo (Esto es para prevenir saturar el servidor)\nPero si no crece más el pozo, el límite de participaciones será de 50."
   },
   {
     "id": 2,
@@ -21,7 +29,7 @@
     "autor": "Admin",
     "imagen": "",
     "fecha": "2026-03-01",
-    "cuerpo": "Las puertas del Torneo Inmortal se abrieron. Junta a tu equipo o anda solo, elegí tu clase y prepárate para los grandes retos que van a definir al campeón definitivo.\n\nPero acordate algo, en la wiki vas a encontrar información importnate para estudiar el equipamiento disponible."
+    "cuerpo": "Las puertas del Torneo Inmortal se han abierto. Reúne a tu equipo, elige tu clase sabiamente y prepárate para los 4 grandes retos que definirán al campeón definitivo.\n\nRecuerda revisar la Wiki para estudiar el equipamiento disponible."
   },
   {
     "id": 1,
@@ -29,6 +37,6 @@
     "autor": "Admin",
     "imagen": "",
     "fecha": "2026-02-25",
-    "cuerpo": "Hemos iniciado la campaña de recolección para el Pozo del Torneo. Todo el dinero donado por la comunidad a través de la pestaña **Prize Pool** irá destinado directamente a los ganadores. ¡Apoya a los participantes!"
+    "cuerpo": "Hemos iniciado la campaña de recolección para el Pozo del Torneo. Todo el dinero donado por la comunidad a través de la pestaña 'Prize Pool' irá destinado directamente a los ganadores del Coliseo Final. ¡Apoya a los gladiadores!"
   }
 ]
