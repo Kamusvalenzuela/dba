@@ -1,58 +1,74 @@
 [
   {
-    "Mes": "Enero 2026",
-    "Nombre": "Mamá",
-    "AporteLuz": 55000,
-    "AporteGas": 14000,
-    "AporteComida": 300000,
-    "AporteInternet": 0
+    "Mes": "Febrero 2026",
+    "Nombre": "Leo",
+    "AporteLuz": 35114.0,
+    "AporteGas": 1700.0,
+    "AporteInternet": 30196.76,
+    "AporteComida": 0.0
   },
   {
     "Mes": "Enero 2026",
-    "Nombre": "Franco",
-    "AporteLuz": 100000,
-    "AporteGas": 0,
-    "AporteComida": 21000,
-    "AporteInternet": 43051
+    "Nombre": "Mamá",
+    "AporteLuz": 0.0,
+    "AporteGas": 0.0,
+    "AporteInternet": 0.0,
+    "AporteComida": 0.0
+  },
+  {
+    "Mes": "Marzo 2026",
+    "Nombre": "Mamá",
+    "AporteLuz": 91000.0,
+    "AporteGas": 15000.0,
+    "AporteInternet": 0.0,
+    "AporteComida": 300000.0
   },
   {
     "Mes": "Febrero 2026",
     "Nombre": "Mamá",
-    "AporteLuz": 60000,
-    "AporteGas": 15000,
-    "AporteComida": 320000,
-    "AporteInternet": 0
+    "AporteLuz": 60000.0,
+    "AporteGas": 15000.0,
+    "AporteInternet": 0.0,
+    "AporteComida": 320000.0
   },
   {
-    "Mes": "Marzo 2026",
+    "Mes": "Enero 2026",
     "Nombre": "Mamá",
-    "AporteLuz": 91000,
-    "AporteGas": 15000,
-    "AporteComida": 300000,
-    "AporteInternet": 0
-  },
-  {
-    "Mes": "Marzo 2026",
-    "Nombre": "Franco",
-    "AporteLuz": 213646,
-    "AporteGas": 0,
-    "AporteComida": 20000,
-    "AporteInternet": 47193.72
+    "AporteLuz": 55000.0,
+    "AporteGas": 14000.0,
+    "AporteInternet": 0.0,
+    "AporteComida": 300000.0
   },
   {
     "Mes": "Marzo 2026",
     "Nombre": "Papá",
-    "AporteLuz": 0,
-    "AporteGas": 0,
-    "AporteComida": 325000,
-    "AporteInternet": 0
+    "AporteLuz": 0.0,
+    "AporteGas": 0.0,
+    "AporteInternet": 0.0,
+    "AporteComida": 325000.0
+  },
+  {
+    "Mes": "Marzo 2026",
+    "Nombre": "Franco",
+    "AporteLuz": 213646.0,
+    "AporteGas": 0.0,
+    "AporteInternet": 47193.72,
+    "AporteComida": 20000.0
+  },
+  {
+    "Mes": "Enero 2026",
+    "Nombre": "Franco",
+    "AporteLuz": 100000.0,
+    "AporteGas": 0.0,
+    "AporteInternet": 43051.0,
+    "AporteComida": 21000.0
   },
   {
     "Mes": "Marzo 2026",
     "Nombre": "Leo",
-    "AporteLuz": 34476,
-    "AporteGas": 1700,
-    "AporteComida": 0,
-    "AporteInternet": 47193.72
+    "AporteLuz": 34476.0,
+    "AporteGas": 1700.0,
+    "AporteInternet": 47193.72,
+    "AporteComida": 0.0
   }
 ]
