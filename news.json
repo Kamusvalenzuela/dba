@@ -1,11 +1,19 @@
 [
   {
+    "id": 6,
+    "titulo": "Ralentización Importante",
+    "autor": "Admin",
+    "imagen": "https://raw.githubusercontent.com/Kamusvalenzuela/images/refs/heads/main/Images/noticia4.png",
+    "fecha": "2026-05-01",
+    "cuerpo": "# ⚠️Estado del servidor: Mantenimiento del \"Host\" *(Osea yo)* ⚠️\n\nCómo andan todos? pasaba por acá para tirarles una `update` de esas que no tienen que ver con el torneo sino con la vida real...\n\n- Como muchos saben, vengo lidiando con un bardo médico debido a mi enfermedad. Últimamente, mi \"barra de HP\" estuvo bajando más rápido de lo que se puede curar, y me tocó dedicarle más tiempo a un par de **estudios y misiones secundarias en hospitales** para asegurarme de que el Dev siga online mucho tiempo más.\n\n## En qué afecta esto al torneo?.\n\nPara no hacer las cosas a las apuradas y que el servidor explote en medio de una ronda, decidí **retrasar el calendario aproximadamente un mes.**\n- **Alpha y Beta:** se mueven 30 días para pulir bien esos bugs (y que yo pueda descansar).\n- **Torneo LIVE:** También se corre un mes (tómenlo como un tiempo extra para entrenar mentalmente).\n\n## \"Slow mode\".\n\nEsto no detiene el proyecto, es solo una ralentización temporal en el desarrollo. Sigo acá, pensando en los minijuegos y en como verlos sufrir (con amor) en el torneo, pero a un ritmo más tranqui mientras pongo el cuerpo en orden~\n- **NOTA del Dev:** Dicen que los mejores juegos se retrasan para ser épicos y los malos salen rápido y con bugs. Yo elijo la opción de Shigeru Miyamoto *(y la de no desmayarme frente al monitor).*\n\n**Les prometo que la espera va a valer totalmente la pena.**\n\nGracias por el aguante, los mensajes y por entender que a veces, las cosas deben esperar para que salgan bien~"
+  },
+  {
     "id": 5,
     "titulo": "Sin Sponsors",
     "autor": "Admin",
     "imagen": "https://raw.githubusercontent.com/Kamusvalenzuela/images/refs/heads/main/Images/noticia3.png",
     "fecha": "2026-04-09",
-    "cuerpo": "# Sobre la primera edición\n## Sponsors\nLas grandes marcas **NO** nos auspiciaran debido a que no contamos con una cantidad de audiencia acorde a lo que buscan *(piden **+100 viewers** y **+10.000 seguidores** como **MÍNIMO**)*. Por este motivo, esta primera edición del **Torneo Inmortal**, será auspiciada enteramente del bolsillo de **Kamus** y quizás algún asociado.\n## Qué significa esto?\nEn terminos simples de entender significa que:\n- El pozo **NO** subirá tanto como se esperaba\n- El cupo de participantes será **limitado** a solo **50 personas**\n- Solo asociados podrán ayudar a este proyecto.\n Se espera que en la próxima edición, logremos el cometido de poder tener mejores números que ofrecerles, ya que como se aclaró en varias ocasiones, el equipo de desarrollo y el staff completo de este torneo **NO SE QUEDA CON NADA**. Este torneo es con el fin de mejorar nuestra audiencia."
+    "cuerpo": "# Sobre la primera edición\n## Sponsors\nLas grandes marcas **NO** nos auspiciaran debido a que no contamos con una cantidad de audiencia acorde a lo que buscan *(piden **+100 viewers** y **+10.000 seguidores** como **MÍNIMO**)*. Por este motivo, esta primera edición del **Torneo Inmortal**, será auspiciada enteramente del bolsillo de **Kamus** y quizás algún asociado.\n## Qué significa esto?\nEn terminos simples de entender significa que:\n- El pozo **NO** subirá tanto como se esperaba\n- El cupo de participantes será **limitado** a solo **50 personas**\n- Solo asociados podrán ayudar a este proyecto\nSe espera que en la próxima edición, logremos el cometido de poder tener mejores números que ofrecerles, ya que como se aclaró en varias ocasiones, el equipo de desarrollo y el staff completo de este torneo **NO SE QUEDA CON NADA**. Este torneo es con el fin de mejorar nuestra audiencia."
   },
   {
     "id": 4,
