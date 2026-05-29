@@ -4,21 +4,21 @@
     "AporteLuz": 78937.0,
     "AporteGas": 0,
     "AporteInternet": 0,
-    "AporteComida": 0
+    "AporteComida": 150000.0
   },
   {
     "Nombre": "Papá",
-    "AporteLuz": 0,
+    "AporteLuz": 40000.0,
     "AporteGas": 0,
     "AporteInternet": 0,
-    "AporteComida": 0
+    "AporteComida": 320000.0
   },
   {
     "Nombre": "Franco",
-    "AporteLuz": 99799.0,
+    "AporteLuz": 141058.0,
     "AporteGas": 0,
     "AporteInternet": 49789.47,
-    "AporteComida": 0
+    "AporteComida": 85500.0
   },
   {
     "Nombre": "Leo",
