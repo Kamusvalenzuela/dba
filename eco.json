@@ -15,16 +15,16 @@
   },
   {
     "Nombre": "Franco",
-    "AporteLuz": 0,
+    "AporteLuz": 44000.0,
     "AporteGas": 0,
-    "AporteInternet": 0,
+    "AporteInternet": 29161.3,
     "AporteComida": 0
   },
   {
     "Nombre": "Leo",
-    "AporteLuz": 0,
-    "AporteGas": 0,
-    "AporteInternet": 0,
+    "AporteLuz": 29161.3,
+    "AporteGas": 4200.0,
+    "AporteInternet": 52727.13,
     "AporteComida": 0
   }
 ]
