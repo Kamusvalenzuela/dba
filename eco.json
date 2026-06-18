@@ -1,29 +1,29 @@
 [
   {
     "Nombre": "Mamá",
-    "AporteLuz": 0,
+    "AporteLuz": 60000.0,
     "AporteGas": 0,
     "AporteInternet": 0,
     "AporteComida": 0
   },
   {
     "Nombre": "Papá",
-    "AporteLuz": 0,
+    "AporteLuz": 20000.0,
     "AporteGas": 0,
     "AporteInternet": 0,
     "AporteComida": 0
   },
   {
     "Nombre": "Franco",
-    "AporteLuz": 104000.0,
+    "AporteLuz": 297038.0,
     "AporteGas": 0,
-    "AporteInternet": 29161.3,
+    "AporteInternet": 52727.13,
     "AporteComida": 0
   },
   {
     "Nombre": "Leo",
     "AporteLuz": 29161.3,
-    "AporteGas": 4200.0,
+    "AporteGas": 4200,
     "AporteInternet": 52727.13,
     "AporteComida": 0
   }
