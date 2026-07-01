@@ -118,5 +118,37 @@
     "AporteGas": 1900.0,
     "AporteInternet": 49789.47,
     "AporteComida": 0.0
+  },
+  {
+    "Mes": "Junio 2026",
+    "Nombre": "Mamá",
+    "AporteLuz": 260000.0,
+    "AporteGas": 0.0,
+    "AporteInternet": 0.0,
+    "AporteComida": 100000.0
+  },
+  {
+    "Mes": "Junio 2026",
+    "Nombre": "Papá",
+    "AporteLuz": 50000.0,
+    "AporteGas": 0.0,
+    "AporteInternet": 0.0,
+    "AporteComida": 458500.0
+  },
+  {
+    "Mes": "Junio 2026",
+    "Nombre": "Leo",
+    "AporteLuz": 39161.3,
+    "AporteGas": 4200.0,
+    "AporteInternet": 52727.13,
+    "AporteComida": 0.0
+  },
+  {
+    "Mes": "Junio 2026",
+    "Nombre": "Franco",
+    "AporteLuz": 517038.0,
+    "AporteGas": 0.0,
+    "AporteInternet": 52727.13,
+    "AporteComida": 0.0
   }
 ]
